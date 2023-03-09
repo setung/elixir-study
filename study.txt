@@ -1,0 +1,26 @@
+# 실행: iex -S mix
+# 종료 없이 재컴파일: recompile
+# Enum 컬랙션 라이브러리
+# 자동 정렬: shift option f
+# mix deps.get 의존성 추가
+# mix docs 문서화
+
+# 패턴 매칭  {hand, rest_of_deck} = Cards.deal(deck, 5)
+# color1 = ["red"]
+# [color1] = ["red"]
+# [color1, color2] = ["red", "blue"]
+
+map 사용
+ - colors = %{primary: "red", secondary: "blue"}
+   - colors.primary -> "red"
+   - colors.secondary -> "blue"
+ - %{primary: primary_color} = colors
+   - primary_color -> "red"
+
+ - Map.put(colors, :primary, "blue") ==> colors의 맵 자체를 변형시키지 않고 새로운 맵을 생성 반환
+ - %{colors | primary: "blue" }
+
+list 
+ - colors =[{:primary, "red"}, {:secondary, "green"}]
+   - colors[:primary] --> "red"
+ - colors = [primary: "red", secondary: "blue"]

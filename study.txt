@@ -24,3 +24,10 @@ list
  - colors =[{:primary, "red"}, {:secondary, "green"}]
    - colors[:primary] --> "red"
  - colors = [primary: "red", secondary: "blue"]
+
+struct 
+ - 선언: defstruct
+ - 호출 시 % 사용. ex) %Identicon.Image{}
+
+ 패턴 매칭 형식이 맞지 않을 때,
+  - | _tail과 같이 사용. ex) [r, g, b | _tail] = hex_list

@@ -32,3 +32,16 @@ struct
 
  패턴 매칭 형식이 맞지 않을 때,
   - | _tail과 같이 사용. ex) [r, g, b | _tail] = hex_list
+
+
+----------------
+phoenix
+설치 : mix archive.install hex phx_new
+프로젝트 생성 : mix phx.new projectNmae
+실행 : iex -S mix phx.server
+
+config/dev.exs에서 db 정보 입력 후
+mix ecto.create
+
+엘릭서 템플릿 파일
+ - index.html.(h)eex

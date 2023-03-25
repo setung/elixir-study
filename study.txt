@@ -45,3 +45,14 @@ mix ecto.create
 
 엘릭서 템플릿 파일
  - index.html.(h)eex
+
+ MVC 
+ 1. request
+ 2. router (lib>discuss_web>router.ex)
+ 3. controller (lib>discuss_web>controllers>page_controller.ex) <-model <-database
+ 4. view <-template
+ 5. response
+
+DB 마이그레이션
+ - mix ecto.gen.migration add_tipics
+ - mix ecto.migrate

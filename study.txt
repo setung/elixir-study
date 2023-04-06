@@ -54,5 +54,17 @@ mix ecto.create
  5. response
 
 DB 마이그레이션
- - mix ecto.gen.migration add_tipics
+ - mix ecto.gen.migration add_topics
  - mix ecto.migrate
+
+ 코드 재사용
+  - import : 외부 모듈 함수를 복사
+  - alias  : 별칭 ?
+  - use    : 
+
+web.ex(discuss_web)
+ - 컨트롤러, 모델, 뷰 등 여러 기능을 정의
+ - use DiscussWeb, :controller
+
+ 런타임 중 로깅
+  - IO.puts, IO.inspect 

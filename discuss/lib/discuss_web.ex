@@ -16,12 +16,13 @@ defmodule DiscussWeb do
   below. Instead, define additional modules and import
   those modules here.
   """
+alias ElixirSense.Plugins.Ecto
 
   def static_paths, do: ~w(assets fonts images favicon.ico robots.txt)
 
   def router do
     quote do
-      use Phoenix.Router, helpers: false
+      use Phoenix.Router, helpers: true
 
       # Import common connection and controller functions to use in pipelines
       import Plug.Conn
@@ -70,6 +71,7 @@ defmodule DiscussWeb do
     quote do
       use Phoenix.Component
 
+      import Phoenix.HTML.Form
       # Import convenience functions from controllers
       import Phoenix.Controller,
         only: [get_csrf_token: 0, view_module: 1, view_template: 1]

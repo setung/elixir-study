@@ -1,0 +1,6 @@
+<%= form_for @changeset, "/topics", fn f-> %>
+  <div class="Form-group">
+     <%= text_input f, :title, placeholder: "Title", class: "form-control" %>
+   </div>
+   <%= submit "Save Topic", class: "btn btn-primary" %>
+<% end %>

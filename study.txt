@@ -68,3 +68,12 @@ web.ex(discuss_web)
 
  런타임 중 로깅
   - IO.puts, IO.inspect 
+
+  Discuss.topic
+   - Struct : DB 레코드
+   - Params : 레코드 업데이트 값
+   - cast : 업데이트 데이터 디비에 기록
+   - validators : 업데이트된 데이터 유효성 검사
+   
+  
+  mix phx.routes 경로보기

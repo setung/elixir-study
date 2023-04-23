@@ -1,3 +1,5 @@
+https://hexdocs.pm/ecto/Ecto.html 참고
+
 # 프로젝트 생성 mix new name
 # 실행: iex -S mix
 # 종료 없이 재컴파일: recompile

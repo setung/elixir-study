@@ -1,6 +1,8 @@
-<%= form_for @changeset, "/topics", fn f-> %>
-  <div class="Form-group">
+<%= form_for @changeset, DiscussWeb.Router.Helpers.topic_path(@conn, :create), fn f-> %>
+  <div class="form-group">
      <%= text_input f, :title, placeholder: "Title", class: "form-control" %>
    </div>
    <%= submit "Save Topic", class: "btn btn-primary" %>
+
+   <div class = "help-block">css 테스트 </div>
 <% end %>

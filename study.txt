@@ -79,3 +79,6 @@ web.ex(discuss_web)
    
   
   mix phx.routes 경로보기
+
+  oauth 구현
+   - github ueberauth

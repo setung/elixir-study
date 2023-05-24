@@ -18,9 +18,20 @@ defmodule DiscussWeb.Router do
     pipe_through :browser
 
    # get "/", PageController, :home
-    get "/topics/new", TopicController, :new
-    post "/topics", TopicController, :create
-    get "/", TopicController, :index
+   # get "/topics/new", TopicController, :new
+   # post "/topics", TopicController, :create
+   # get "/", TopicController, :index
+   # get "/topics/:id/edit", TopicController, :edit
+   # put "/topics/:id", TopicController, :update
+
+   resources "/", TopicController
+  end
+
+  scope "/auth", DiscussWeb do
+    pipe_through :browser
+
+    get "/:provider", AuthController, :request
+    get "/:provider/callback", AuthController, :callback
   end
 
   # Other scopes may use custom stacks.

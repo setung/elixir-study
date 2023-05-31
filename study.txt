@@ -82,3 +82,6 @@ web.ex(discuss_web)
 
   oauth 구현
    - github ueberauth
+
+
+   private fun 선언 : defp

@@ -85,3 +85,14 @@ web.ex(discuss_web)
 
 
    private fun 선언 : defp
+
+   module 구현
+    - init function
+    - call function
+
+    cond switch와 비슷한 분기문
+
+모델간 연관관계
+ - has_many
+ - belongs_to
+ - build_assoc

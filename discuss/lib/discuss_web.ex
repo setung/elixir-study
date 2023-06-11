@@ -16,7 +16,6 @@ defmodule DiscussWeb do
   below. Instead, define additional modules and import
   those modules here.
   """
-alias ElixirSense.Plugins.Ecto
 
   def static_paths, do: ~w(assets fonts images favicon.ico robots.txt)
 
@@ -70,8 +69,8 @@ alias ElixirSense.Plugins.Ecto
   def html do
     quote do
       use Phoenix.Component
+      import Phoenix.HTML.Form # !!!!!
 
-      import Phoenix.HTML.Form
       # Import convenience functions from controllers
       import Phoenix.Controller,
         only: [get_csrf_token: 0, view_module: 1, view_template: 1]

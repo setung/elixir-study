@@ -18,7 +18,7 @@ config :discuss, DiscussWeb.Endpoint,
     layout: false
   ],
   pubsub_server: Discuss.PubSub,
-  live_view: [signing_salt: "ZV1aMrmz"]
+  live_view: [signing_salt: "/dfO+woa"]
 
 # Configures the mailer
 #
@@ -31,7 +31,7 @@ config :discuss, Discuss.Mailer, adapter: Swoosh.Adapters.Local
 
 # Configure esbuild (the version is required)
 config :esbuild,
-  version: "0.14.41",
+  version: "0.17.11",
   default: [
     args:
       ~w(js/app.js --bundle --target=es2017 --outdir=../priv/static/assets --external:/fonts/* --external:/images/*),
@@ -41,7 +41,7 @@ config :esbuild,
 
 # Configure tailwind (the version is required)
 config :tailwind,
-  version: "3.2.4",
+  version: "3.2.7",
   default: [
     args: ~w(
       --config=tailwind.config.js
@@ -59,15 +59,15 @@ config :logger, :console,
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
 
-# Import environment specific config. This must remain at the bottom
-# of this file so it overrides the configuration defined above.
-import_config "#{config_env()}.exs"
-
 config :ueberauth, Ueberauth,
   providers: [
-    github: {Ueberauth.Strategy.Github, []}
+    github: {Ueberauth.Strategy.Github, [default_scope: "user,public_repo,notifications"]}
   ]
 
   config :ueberauth, Ueberauth.Strategy.Github.OAuth,
-    client_id: System.get_env("GITHUB_CLIENT_ID"),
-    client_secret: System.get_env("GITHUB_CLIENT_SECRET")
+  client_id: "23a90981b4152252cbf7",
+  client_secret: "34922828c46014b0018953b54fb557ff829c0465"
+
+# Import environment specific config. This must remain at the bottom
+# of this file so it overrides the configuration defined above.
+import_config "#{config_env()}.exs"

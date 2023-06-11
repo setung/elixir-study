@@ -8,6 +8,7 @@ defmodule DiscussWeb.Router do
     plug :put_root_layout, {DiscussWeb.Layouts, :root}
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+    plug DiscussWeb.Plugs.SetUser
   end
 
   pipeline :api do
@@ -16,28 +17,27 @@ defmodule DiscussWeb.Router do
 
   scope "/", DiscussWeb do
     pipe_through :browser
+    # get "/test", PageController, :test
+    get "/", TopicController, :index
+    # get "/topics/new", TopicController, :new
+    # post "/topics", TopicController, :create
+    # get "topics/:id", TopicController, :show
+    # get "/topics/:id/edit", TopicController, :edit
+    # put "/topics/:id", TopicController, :update
+    resources "/topics", TopicController
+  end
 
-   # get "/", PageController, :home
-   # get "/topics/new", TopicController, :new
-   # post "/topics", TopicController, :create
-   # get "/", TopicController, :index
-   # get "/topics/:id/edit", TopicController, :edit
-   # put "/topics/:id", TopicController, :update
-
-   resources "/", TopicController
+  # Other scopes may use custom stacks.
+  scope "/api", DiscussWeb do
+    pipe_through :api
   end
 
   scope "/auth", DiscussWeb do
     pipe_through :browser
-
+    get "/signout", AuthController, :signout
     get "/:provider", AuthController, :request
     get "/:provider/callback", AuthController, :callback
   end
-
-  # Other scopes may use custom stacks.
-  # scope "/api", DiscussWeb do
-  #   pipe_through :api
-  # end
 
   # Enable LiveDashboard and Swoosh mailbox preview in development
   if Application.compile_env(:discuss, :dev_routes) do

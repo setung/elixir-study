@@ -1,0 +1,97 @@
+https://hexdocs.pm/ecto/Ecto.html 참고
+
+# 프로젝트 생성 mix new name
+# 실행: iex -S mix
+# 종료 없이 재컴파일: recompile
+# Enum 컬랙션 라이브러리
+# 자동 정렬: shift option f
+# mix deps.get 의존성 추가
+# mix docs 문서화
+
+# 패턴 매칭  {hand, rest_of_deck} = Cards.deal(deck, 5)
+# color1 = ["red"]
+# [color1] = ["red"]
+# [color1, color2] = ["red", "blue"]
+
+map 사용
+ - colors = %{primary: "red", secondary: "blue"}
+   - colors.primary -> "red"
+   - colors.secondary -> "blue"
+ - %{primary: primary_color} = colors
+   - primary_color -> "red"
+
+ - Map.put(colors, :primary, "blue") ==> colors의 맵 자체를 변형시키지 않고 새로운 맵을 생성 반환
+ - %{colors | primary: "blue" }
+
+list 
+ - colors =[{:primary, "red"}, {:secondary, "green"}]
+   - colors[:primary] --> "red"
+ - colors = [primary: "red", secondary: "blue"]
+
+struct 
+ - 선언: defstruct
+ - 호출 시 % 사용. ex) %Identicon.Image{}
+
+ 패턴 매칭 형식이 맞지 않을 때,
+  - | _tail과 같이 사용. ex) [r, g, b | _tail] = hex_list
+
+
+----------------
+phoenix
+설치 : mix archive.install hex phx_new
+프로젝트 생성 : mix phx.new projectNmae
+실행 : iex -S mix phx.server
+
+config/dev.exs에서 db 정보 입력 후
+mix ecto.create
+
+엘릭서 템플릿 파일
+ - index.html.(h)eex
+
+ MVC 
+ 1. request
+ 2. router (lib>discuss_web>router.ex)
+ 3. controller (lib>discuss_web>controllers>page_controller.ex) <-model <-database
+ 4. view <-template
+ 5. response
+
+DB 마이그레이션
+ - mix ecto.gen.migration add_topics
+ - mix ecto.migrate
+
+ 코드 재사용
+  - import : 외부 모듈 함수를 복사
+  - alias  : 별칭 ?
+  - use    : 
+
+web.ex(discuss_web)
+ - 컨트롤러, 모델, 뷰 등 여러 기능을 정의
+ - use DiscussWeb, :controller
+
+ 런타임 중 로깅
+  - IO.puts, IO.inspect 
+
+  Discuss.topic
+   - Struct : DB 레코드
+   - Params : 레코드 업데이트 값
+   - cast : 업데이트 데이터 디비에 기록
+   - validators : 업데이트된 데이터 유효성 검사
+   
+  
+  mix phx.routes 경로보기
+
+  oauth 구현
+   - github ueberauth
+
+
+   private fun 선언 : defp
+
+   module 구현
+    - init function
+    - call function
+
+    cond switch와 비슷한 분기문
+
+모델간 연관관계
+ - has_many
+ - belongs_to

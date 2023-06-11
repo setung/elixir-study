@@ -3,14 +3,3 @@
 @import "tailwindcss/utilities";
 
 /* This file is for your main application CSS */
-.help-block {
-    color: red;
-    text-transform: capitalize;
-    position: absolute;
-    top: 35px;
-}
-
-.form-group {
-    position: relative;
-    margin-bottom: 25px;
-}

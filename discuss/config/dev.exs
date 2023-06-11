@@ -23,7 +23,7 @@ config :discuss, DiscussWeb.Endpoint,
   check_origin: false,
   code_reloader: true,
   debug_errors: true,
-  secret_key_base: "z1vbjKDELNIoqR2sPD4NHbH9+KOuD6GmVySD6/8VC2xNg82Fpr0GqO6fr/b8FJaa",
+  secret_key_base: "K6HWmOpVaCAaF4tpOfDst3rREJRiJZaEHXt/J8uiE9MBaOhkiZMiqkS50LVV/EDg",
   watchers: [
     esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]},
     tailwind: {Tailwind, :install_and_run, [:default, ~w(--watch)]}

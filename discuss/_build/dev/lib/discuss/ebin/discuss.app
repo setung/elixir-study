@@ -1,6 +1,7 @@
 {application,discuss,
              [{compile_env,[{discuss,['Elixir.DiscussWeb.Gettext'],error},
                             {discuss,[dev_routes],{ok,true}}]},
+              {optional_applications,[]},
               {applications,[kernel,stdlib,elixir,logger,runtime_tools,
                              phoenix,phoenix_ecto,ecto_sql,postgrex,
                              phoenix_html,phoenix_live_reload,

@@ -1,5 +1,6 @@
 {application,connection,
-             [{applications,[kernel,stdlib,elixir]},
+             [{optional_applications,[]},
+              {applications,[kernel,stdlib,elixir]},
               {description,"Connection behaviour for connection processes\n"},
               {modules,['Elixir.Connection']},
               {registered,[]},

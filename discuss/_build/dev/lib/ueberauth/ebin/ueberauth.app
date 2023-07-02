@@ -1,5 +1,6 @@
 {application,ueberauth,
-             [{applications,[kernel,stdlib,elixir,logger,plug]},
+             [{optional_applications,[]},
+              {applications,[kernel,stdlib,elixir,logger,plug]},
               {description,"An Elixir Authentication System for Plug-based Web Applications"},
               {modules,['Elixir.Ueberauth','Elixir.Ueberauth.Auth',
                         'Elixir.Ueberauth.Auth.Credentials',

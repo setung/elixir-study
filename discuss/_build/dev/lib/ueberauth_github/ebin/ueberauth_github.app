@@ -1,5 +1,6 @@
 {application,ueberauth_github,
-             [{applications,[kernel,stdlib,elixir,logger,ueberauth,oauth2]},
+             [{optional_applications,[]},
+              {applications,[kernel,stdlib,elixir,logger,ueberauth,oauth2]},
               {description,"ueberauth_github"},
               {modules,['Elixir.Ueberauth.Strategy.Github',
                         'Elixir.Ueberauth.Strategy.Github.OAuth',

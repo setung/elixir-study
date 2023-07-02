@@ -1,5 +1,6 @@
 {application,oauth2,
-             [{applications,[kernel,stdlib,elixir,logger,tesla]},
+             [{optional_applications,[]},
+              {applications,[kernel,stdlib,elixir,logger,tesla]},
               {description,"An Elixir OAuth 2.0 Client Library"},
               {modules,['Elixir.OAuth2','Elixir.OAuth2.AccessToken',
                         'Elixir.OAuth2.Client','Elixir.OAuth2.Error',

@@ -92,4 +92,8 @@ web.ex(discuss_web)
 
     cond switch와 비슷한 분기문
 
-    
+    websocket
+     - 채널을 통해 구현
+     - 서버와 클라이언트(user_socket.js) 양쪽 구현
+     - use Phoenix.Channel
+     - /deps/phoenix/priv/templates/phx.gen.socket/socket.js

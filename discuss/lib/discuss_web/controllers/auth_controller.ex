@@ -6,7 +6,7 @@ defmodule DiscussWeb.AuthController do
   alias DiscussWeb.Models.User
   alias Discuss.Repo
 
-  def callback(%{ assigns: %{ueberauth_auth: auth}} = conn, params) do
+  def callback(%{ assigns: %{ueberauth_auth: auth}} = conn, _params) do
 
     user_params = %{
       token: auth.credentials.token,
@@ -42,7 +42,7 @@ defmodule DiscussWeb.AuthController do
     end
   end
 
-  def signout(conn, changeset) do
+  def signout(conn, _changeset) do
     conn
     |> configure_session(drop: true)
     |> redirect(to: ~p"/topics")
